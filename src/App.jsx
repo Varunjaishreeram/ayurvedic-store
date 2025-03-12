@@ -1,12 +1,19 @@
-// App.js
+
+
+
+
+
 import React from "react";
 import { useState, useRef } from "react";
 import { Routes, Route, Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaShoppingCart } from "react-icons/fa";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import ProductList from "./components/ProductList";
 import ProductDetail from "./components/ProductDetail";
 import Cart from "./components/Cart";
+
 
 const products = [
   { 
@@ -96,7 +103,6 @@ const products = [
   }
 ];
 
-
 function App() {
   const [isOpen, setIsOpen] = useState(false);
   const [cart, setCart] = useState([]);
@@ -114,6 +120,7 @@ function App() {
       return [...prevCart, { ...product, quantity }];
     });
 
+    // Trigger animation
     if (triggerElement && cartIconRef.current) {
       const triggerRect = triggerElement.getBoundingClientRect();
       const cartRect = cartIconRef.current.getBoundingClientRect();
@@ -124,6 +131,17 @@ function App() {
       });
       setTimeout(() => setAnimationTrigger(null), 800);
     }
+
+    // Show toast notification
+    toast.success(`${product.name} added to cart!`, {
+      position: "bottom-right",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
   };
 
   return (
@@ -135,7 +153,7 @@ function App() {
         className="bg-gradient-to-r from-green-700 to-green-500 text-white p-4 shadow-xl sticky top-0 z-50"
       >
         <div className="max-w-7xl mx-auto flex justify-between items-center">
-          <Link to="/" className="text-3xl font-extrabold tracking-wider">Saatwik Ayurveda</Link>
+          <Link to="/" className="text-3xl font-extrabold tracking-wider">Ayurveda Bliss</Link>
           <div className="hidden md:flex space-x-8 items-center">
             <Link to="/" className="hover:text-yellow-200 transition duration-300 font-medium">Home</Link>
             <Link to="/products" className="hover:text-yellow-200 transition duration-300 font-medium">Products</Link>
@@ -184,6 +202,7 @@ function App() {
         </Routes>
       </AnimatePresence>
 
+      {/* Cart Animation */}
       {animationTrigger && (
         <motion.img
           src={animationTrigger.product.img}
@@ -193,6 +212,19 @@ function App() {
           style={{ position: "fixed", zIndex: 1000, width: "50px", height: "50px", borderRadius: "50%", objectFit: "cover" }}
         />
       )}
+
+      {/* Toast Container */}
+      <ToastContainer
+        position="bottom-right"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
     </div>
   );
 }
