@@ -153,7 +153,7 @@ function App() {
         className="bg-gradient-to-r from-green-700 to-green-500 text-white p-4 shadow-xl sticky top-0 z-50"
       >
         <div className="max-w-7xl mx-auto flex justify-between items-center">
-          <Link to="/" className="text-3xl font-extrabold tracking-wider">Ayurveda Bliss</Link>
+          <Link to="/" className="text-3xl font-extrabold tracking-wider">Saatwik Ayurveda</Link>
           <div className="hidden md:flex space-x-8 items-center">
             <Link to="/" className="hover:text-yellow-200 transition duration-300 font-medium">Home</Link>
             <Link to="/products" className="hover:text-yellow-200 transition duration-300 font-medium">Products</Link>
