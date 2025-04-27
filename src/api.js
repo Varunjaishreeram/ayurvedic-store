@@ -5,7 +5,7 @@ import axios from 'axios';
 // VITE_API_BASE_URL will be replaced by Vite during the build process
 // with the value you set in Vercel environment variables.
 // For local development, it might be undefined, so we can fall back.
-const apiBaseUrl = import.meta.env.VITE_API_BASE_URL || 'http://127.0.0.1:5000'; // Fallback for local dev if needed, but proxy handles it better there.
+const apiBaseUrl = 'https://saatwikayurveda-backend.onrender.com/'; // Fallback for local dev if needed, but proxy handles it better there.
 
 console.log(`API Base URL being used: ${apiBaseUrl}`); // Good for debugging
 
