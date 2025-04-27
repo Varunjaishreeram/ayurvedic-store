@@ -1,16 +1,33 @@
 // src/api.js
 import axios from 'axios';
 
+// Get the base URL from environment variables
+// VITE_API_BASE_URL will be replaced by Vite during the build process
+// with the value you set in Vercel environment variables.
+// For local development, it might be undefined, so we can fall back.
+const apiBaseUrl = import.meta.env.VITE_API_BASE_URL || 'http://127.0.0.1:5000'; // Fallback for local dev if needed, but proxy handles it better there.
+
+console.log(`API Base URL being used: ${apiBaseUrl}`); // Good for debugging
+
 const apiClient = axios.create({
-  // baseURL: 'http://127.0.0.1:5000/api', // REMOVED or COMMENTED OUT - Vite proxy handles this now
+  // Set the base URL for all requests made with this client
+  baseURL: apiBaseUrl,
   withCredentials: true, // Send cookies with requests (needed for Flask-Login sessions)
 });
 
-// Optional: Add interceptors for error handling or token refresh if needed
-// apiClient.interceptors.response.use(response => response, error => {
-//   console.error("API Error:", error.response || error.message || error);
-//   // Handle specific errors like 401 Unauthorized if needed
+// Optional: Add interceptors for logging or error handling if needed
+// apiClient.interceptors.request.use(request => {
+//   console.log('Starting Request', request);
+//   return request;
+// });
+
+// apiClient.interceptors.response.use(response => {
+//   console.log('Response:', response);
+//   return response;
+// }, error => {
+//   console.error('API Error:', error.response || error.message);
 //   return Promise.reject(error);
 // });
+
 
 export default apiClient;
