@@ -1,21 +1,25 @@
 @import "tailwindcss";
 
+
 body {
-    font-family: 'Inter', sans-serif;
-  }
-  
-  .cart-icon {
-    position: relative;
-  }
-  
-  .cart-icon::after {
-    content: attr(data-count);
-    position: absolute;
-    top: -10px;
-    right: -10px;
-    background-color: red;
-    color: white;
-    border-radius: 50%;
-    padding: 2px 6px;
-    font-size: 12px;
-  }
+  font-family: 'Inter', sans-serif; /* Ensure Inter font is loaded (e.g., via index.html or import) */
+  @apply bg-gray-50 text-gray-800 antialiased; /* Base body styles */
+}
+
+/* Example: Custom scrollbar (optional) */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+
