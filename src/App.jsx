@@ -183,7 +183,7 @@ function AppContent() {
                             <Route path="/login" element={<Login />} />
                             <Route path="/signup" element={<Signup />} />
                             {/* Pass clearCart to Checkout */}
-                            <Route path="/checkout" element={<Checkout cart={cart} clearCart={clearCart} />} />
+                            <Route path="/checkout" element={<Checkout cart={cart} setCart={setCart} />} />
                             <Route path="/my-orders" element={<OrderHistory />} />
                             <Route path="*" element={<NotFound />} />
                         </Routes>
