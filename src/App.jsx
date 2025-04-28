@@ -252,7 +252,7 @@ function Navbar({ cart, cartIconRef }) {
                     {/* Logo */}
                     <Link to="/" className="flex items-center text-2xl font-bold tracking-tight hover:opacity-90 transition duration-300">
                         <FaLeaf className="mr-2 text-yellow-300 h-6 w-6"/> {/* Added Leaf Icon */}
-                        Saatwik Ayurveda
+                        Saatwik Aayurveda
                     </Link>
 
                     {/* Desktop Menu */}
@@ -395,7 +395,7 @@ function Footer() {
     return (
         <footer className="bg-gray-100 text-gray-600 text-sm py-6 mt-10 border-t border-gray-200">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                <p>&copy; {new Date().getFullYear()} Saatwik Ayurveda. All Rights Reserved.</p>
+                <p>&copy; {new Date().getFullYear()} Saatwik Aayurveda. All Rights Reserved.</p>
                 {/* Add more footer links if needed */}
                 {/* <div className="mt-2 space-x-4">
                     <Link to="/privacy" className="hover:text-green-700">Privacy Policy</Link>
