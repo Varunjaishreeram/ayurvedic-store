@@ -2,7 +2,7 @@
 import axios from 'axios';
 
 // Get base URL from environment variables
-const apiBaseUrl = import.meta.env.VITE_API_BASE_URL || 'https://saatwikayurveda-backend.onrender.com'; // Fallback for local
+const apiBaseUrl = import.meta.env.VITE_API_BASE_URL || 'http://127.0.0.1:5000'; // Fallback for local
 
 // Log the URL being used (helpful for debugging deployment)
 if (!import.meta.env.VITE_API_BASE_URL) {
