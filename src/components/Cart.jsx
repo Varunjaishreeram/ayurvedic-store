@@ -141,7 +141,7 @@ function Cart({ cart, setCart }) {
                                         <h3 className="text-lg font-medium text-gray-800 hover:text-green-700">
                                             <Link to={`/product/${item.id}`}>{item.name}</Link>
                                         </h3>
-                                        <p className="text-gray-500 text-sm mt-1">{formatCurrency(item.price)} each</p>
+                                        {/* <p className="text-gray-500 text-sm mt-1">{formatCurrency(item.price)} each</p> */}
                                     </div>
                                     {/* Quantity & Price */}
                                     <div className="flex items-center gap-3 sm:gap-4 mt-3 sm:mt-0">
@@ -156,9 +156,9 @@ function Cart({ cart, setCart }) {
                                             className="w-16 h-9 p-1 border border-gray-300 rounded-md text-center text-sm focus:ring-1 focus:ring-green-500 focus:border-green-500 outline-none transition"
                                         />
                                         {/* Subtotal */}
-                                        <p className="text-base font-medium text-gray-900 w-24 text-right">
+                                        {/* <p className="text-base font-medium text-gray-900 w-24 text-right">
                                             {formatCurrency(item.price * item.quantity)}
-                                        </p>
+                                        </p> */}
                                         {/* Remove Button */}
                                         <button
                                             onClick={() => removeFromCart(item.id)}
@@ -177,9 +177,9 @@ function Cart({ cart, setCart }) {
                     {/* Cart Summary & Checkout */}
                     <div className="bg-gray-50 px-4 py-5 sm:px-6 border-t border-gray-200">
                         <div className="flex flex-col sm:flex-row justify-end items-center gap-4">
-                            <div className="text-lg sm:text-xl font-semibold text-gray-800">
+                            {/* <div className="text-lg sm:text-xl font-semibold text-gray-800">
                                 Subtotal: <span className="text-green-700 ml-1">{formatCurrency(cartTotal)}</span>
-                            </div>
+                            </div> */}
                             <button
                                 onClick={handleCheckout}
                                 className="w-full sm:w-auto inline-flex justify-center items-center bg-green-600 text-white px-8 py-2.5 rounded-md hover:bg-green-700 transition-colors duration-300 shadow hover:shadow-md text-base font-medium focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500"

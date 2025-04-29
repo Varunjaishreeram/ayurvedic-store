@@ -124,9 +124,9 @@ function ProductDetail({ products, addToCart }) {
                                 ({averageRating.toFixed(1)}/5 from {reviews.length} review{reviews.length !== 1 ? 's' : ''})
                             </span>
                         </div>
-                        <p className="text-3xl font-semibold text-green-700 mb-6">
+                        {/* <p className="text-3xl font-semibold text-green-700 mb-6">
                             {formatCurrency(product.price)}
-                        </p>
+                        </p> */}
 
                         {/* Description */}
                         <div className="text-gray-700 text-base leading-relaxed mb-6">
