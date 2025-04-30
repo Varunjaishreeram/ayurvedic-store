@@ -2,11 +2,11 @@
 import React, { useState, useRef, useEffect } from "react";
 import { Routes, Route, Link, NavLink, useLocation } from "react-router-dom"; // Use NavLink for active styles
 import { motion, AnimatePresence } from "framer-motion";
-import { FaShoppingCart, FaUserCircle, FaSignOutAlt, FaBoxOpen, FaBars, FaTimes, FaLeaf, FaArrowLeft } from "react-icons/fa"; // Added FaArrowLeft for NotFound
+import { FaShoppingCart, FaUserCircle, FaSignOutAlt, FaBoxOpen, FaBars, FaTimes, FaLeaf, FaArrowLeft, FaPhoneAlt } from "react-icons/fa"; // Added FaPhoneAlt
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-// Import Components (Ensure paths are correct - assuming they are in ./components)
+// Import Components
 import ProductList from "./components/ProductList";
 import ProductDetail from "./components/ProductDetail";
 import Cart from "./components/Cart";
@@ -14,11 +14,12 @@ import Login from "./components/Login";
 import Signup from "./components/Signup";
 import Checkout from "./components/Checkout";
 import OrderHistory from "./components/OrderHistory";
+import ContactUs from "./components/ContactUs"; // *** IMPORT THE NEW COMPONENT ***
 
-// Import Auth Context (Ensure path is correct - assuming it's in ./context)
+// Import Auth Context
 import { AuthProvider, useAuth } from "./context/AuthContext";
 
-// --- Product Data (Ensure image paths are correct relative to the public folder or served correctly) ---
+// --- Product Data ---
 const products = [
      {
        id: 1, name: "Amashay Churn", price: 15, img: "/Amashay_Churn.jpg",
@@ -92,10 +93,7 @@ const pageTransition = {
 };
 
 // --- START: Launch Banner Component ---
-// (Add this simple component here or move to its own file if preferred)
 function LaunchBanner() {
-    // This banner is currently always shown. Add state/logic later to hide/remove it.
-    // Make sure '/celebration.jpg' exists in your /public folder
     const imagePath = "/celebration.jpg"; // ADJUST FILENAME IF NEEDED
 
     return (
@@ -110,8 +108,6 @@ function LaunchBanner() {
                 alt="Saatwik Aayurveda Launch Celebration"
                 className="w-full h-auto max-h-60 sm:max-h-80 object-contain rounded" // Control max height and use object-contain
             />
-            {/* Optional: Add text below the image if needed */}
-            {/* <p className="text-center text-amber-800 mt-3 font-medium">We are thrilled to announce our launch!</p> */}
         </motion.div>
     );
 }
@@ -192,34 +188,17 @@ function AppContent() {
                         variants={pageVariants}
                         transition={pageTransition}
                     >
+                        {/* *** UPDATED ROUTES *** */}
                         <Routes location={location}> {/* Pass location */}
-                           {/* --- MODIFIED ROUTES TO INCLUDE BANNER --- */}
-                            <Route
-                                path="/"
-                                element={
-                                    <>
-                                        <LaunchBanner /> {/* Add Banner here */}
-                                        <ProductList products={products} addToCart={addToCart} />
-                                    </>
-                                }
-                            />
-                            <Route
-                                path="/products"
-                                element={
-                                     <>
-                                        <LaunchBanner /> {/* Add Banner here */}
-                                        <ProductList products={products} addToCart={addToCart} />
-                                    </>
-                                }
-                             />
-                             {/* --- END MODIFICATION --- */}
+                            <Route path="/" element={<ProductList products={products} addToCart={addToCart} />} />
+                            <Route path="/products" element={<ProductList products={products} addToCart={addToCart} />} />
                             <Route path="/product/:id" element={<ProductDetail products={products} addToCart={addToCart} />} />
                             <Route path="/cart" element={<Cart cart={cart} setCart={setCart} />} />
                             <Route path="/login" element={<Login />} />
                             <Route path="/signup" element={<Signup />} />
-                            {/* Pass clearCart and setCart to Checkout */}
                             <Route path="/checkout" element={<Checkout cart={cart} setCart={setCart} clearCart={clearCart} />} />
                             <Route path="/my-orders" element={<OrderHistory />} />
+                            <Route path="/contact-us" element={<ContactUs />} /> {/* *** ADDED CONTACT US ROUTE *** */}
                             <Route path="*" element={<NotFound />} />
                         </Routes>
                     </motion.div>
@@ -297,13 +276,19 @@ function Navbar({ cart, cartIconRef }) {
                         Saatwik Aayurveda
                     </Link>
 
-                    {/* Desktop Menu */}
+                    {/* Desktop Menu *** ADDED CONTACT LINK *** */}
                     <div className="hidden md:flex items-center space-x-4">
                         <NavLink
                             to="/products"
                             className={({ isActive }) => `${baseLinkClassName} ${isActive ? activeClassName : 'border-b-2 border-transparent'}`}
                         >
                             Products
+                        </NavLink>
+                        <NavLink
+                            to="/contact-us"
+                            className={({ isActive }) => `flex items-center ${baseLinkClassName} ${isActive ? activeClassName : 'border-b-2 border-transparent'}`} /* *** ADDED CONTACT LINK *** */
+                        >
+                            <FaPhoneAlt className="mr-1 h-4 w-4"/> Contact Us
                         </NavLink>
                         <NavLink
                             to="/cart"
@@ -382,7 +367,7 @@ function Navbar({ cart, cartIconRef }) {
                 </div>
             </div>
 
-            {/* Mobile Menu Content */}
+            {/* Mobile Menu Content *** ADDED CONTACT LINK *** */}
             <AnimatePresence>
                 {isOpen && (
                     <motion.div
@@ -396,6 +381,9 @@ function Navbar({ cart, cartIconRef }) {
                         <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                             {/* Use NavLink for active styles, ensure closing menu onClick */}
                             <NavLink to="/products" onClick={() => setIsOpen(false)} className={({ isActive }) => `block px-3 py-2 rounded-md text-base font-medium ${isActive ? 'bg-green-800 text-white' : 'text-gray-200 hover:bg-green-600 hover:text-white'}`}>Products</NavLink>
+                            <NavLink to="/contact-us" onClick={() => setIsOpen(false)} className={({ isActive }) => `flex items-center px-3 py-2 rounded-md text-base font-medium ${isActive ? 'bg-green-800 text-white' : 'text-gray-200 hover:bg-green-600 hover:text-white'}`}> {/* *** ADDED CONTACT LINK *** */}
+                                 <FaPhoneAlt className="mr-2 h-4 w-4" /> Contact Us
+                            </NavLink>
                             {/* Mobile cart link removed from dropdown as icon is always visible */}
 
                             {/* Auth Links - Mobile */}
