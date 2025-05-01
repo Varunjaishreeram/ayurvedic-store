@@ -50,7 +50,7 @@ function ContactUs() {
                 <div className="md:w-1/2 p-6 md:p-8 lg:p-10 flex flex-col justify-center">
                     <h3 className="text-2xl font-semibold text-green-800 mb-6 flex items-center">
                         <FaUserMd className="mr-3 text-green-600 flex-shrink-0" /> {/* Doctor Icon */}
-                        Dr. Kuldeep Panchal
+                        Dr. Panchal
                     </h3>
                     <div className="space-y-5 text-gray-700"> {/* Increased spacing */}
                         {/* Email Link */}
