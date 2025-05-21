@@ -87,9 +87,9 @@ function ProductList({ products, addToCart }) {
                             <h3 className="text-lg font-semibold text-gray-800 mb-1 truncate" title={product.name}> {/* Truncate long names */}
                                 {product.name}
                             </h3>
-                            {/* <p className="text-xl font-bold text-green-700 mb-4">
+                            <p className="text-xl font-bold text-green-700 mb-4">
                                 {formatCurrency(product.price)}
-                            </p> */}
+                            </p>
 
                             {/* Spacer to push actions to bottom */}
                             <div className="flex-grow"></div>

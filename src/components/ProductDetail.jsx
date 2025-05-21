@@ -124,9 +124,9 @@ function ProductDetail({ products, addToCart }) {
                                 ({averageRating.toFixed(1)}/5 from {reviews.length} review{reviews.length !== 1 ? 's' : ''})
                             </span>
                         </div>
-                        {/* <p className="text-3xl font-semibold text-green-700 mb-6">
+                        <p className="text-3xl font-semibold text-green-700 mb-6">
                             {formatCurrency(product.price)}
-                        </p> */}
+                        </p>
 
                         {/* Description */}
                         <div className="text-gray-700 text-base leading-relaxed mb-6">
@@ -176,7 +176,17 @@ function ProductDetail({ products, addToCart }) {
                          {product.benefits && (
                              <div>
                                 <h3 className="text-lg font-semibold text-gray-800 mb-2">Benefits</h3>
-                                <p className="text-gray-600 text-sm leading-relaxed">{product.benefits}</p>
+                                <p className="text-gray-600 text-sm leading-relaxed">
+                                    
+                                        {product.benefits.map((benifits,index)=>{
+                                            return (
+                                                <ul key={index} className="list-disc list-inside">
+                                                    <li className="text-gray-600 text-sm leading-relaxed">{benifits}</li>
+                                                </ul>
+                                            )
+                                        })}
+                                    
+                                </p>
                             </div>
                          )}
                         {product.ingredients && (

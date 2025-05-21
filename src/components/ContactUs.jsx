@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { FaEnvelope, FaWhatsapp, FaUserMd } from 'react-icons/fa'; // Import FaWhatsapp
 
 function ContactUs() {
-    const imagePath = "/celebration.jpg"; // Image already used in LaunchBanner
+    const imagePath = "/logo.jpg"; // Image already used in LaunchBanner
 
     // Function to format phone number for WhatsApp link (removes spaces, adds country code if needed)
     const formatWhatsAppNumber = (number) => {
@@ -43,6 +43,8 @@ function ContactUs() {
                         alt="Contact Saatwik Aayurveda"
                         className="w-full h-64 md:h-full object-cover"
                         loading="lazy"
+                        style={{ 
+                         }} // Slightly dimmed for better text contrast
                     />
                 </div>
 
