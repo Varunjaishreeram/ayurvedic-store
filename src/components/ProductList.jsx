@@ -90,6 +90,9 @@ function ProductList({ products, addToCart }) {
                             <p className="text-xl font-bold text-green-700 mb-4">
                                 {formatCurrency(product.price)}
                             </p>
+                            <p className="text-sm text-gray-600 mb-4 flex-grow">
+                                {product.quantity}
+                            </p>
 
                             {/* Spacer to push actions to bottom */}
                             <div className="flex-grow"></div>

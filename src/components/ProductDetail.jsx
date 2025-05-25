@@ -128,6 +128,11 @@ function ProductDetail({ products, addToCart }) {
                             {formatCurrency(product.price)}
                         </p>
 
+                        {/* Product Quantity */}
+                        <div className="text-sm text-gray-600 mb-4">
+                            Quantity: <span className="font-semibold">{product.quantity}</span>
+                        </div>
+
                         {/* Description */}
                         <div className="text-gray-700 text-base leading-relaxed mb-6">
                             {product.description}

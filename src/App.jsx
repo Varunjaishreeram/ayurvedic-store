@@ -28,7 +28,7 @@ import { AuthProvider, useAuth } from "./context/AuthContext";
 // Ensure product data has prices, otherwise addToCart might fail
 const products = [
      {
-       id: 1, name: "Amashay Churn", price: 180.00, img: "/Amashay_Churn.jpg", // Example price update
+       id: 1, name: "Amashay Churn", price: 180.00, quantity: '100gm', img: "/Amashay_Churn.jpg", // Example price update
        description: "A potent Ayurvedic digestive powder crafted from rare Himalayan herbs. Specially formulated to soothe stomach discomfort, reduce bloating, and enhance overall digestion naturally.",
        howToUse: "Mix 1 teaspoon (approx. 5g) with a glass of lukewarm water. Consume twice daily, preferably 30 minutes after lunch and dinner for optimal results.",
        benefits: ["Soothes indigestion and acidity.","Reduces gas and bloating.","Improves nutrient absorption.","Promotes regular bowel movements."],
@@ -36,7 +36,7 @@ const products = [
        reviews: [{ user: "Priya S.", text: "Works wonders for my digestion! Feel much lighter.", rating: 5 },{ user: "Ravi K.", text: "Good product, noticed improvement after a week.", rating: 4 }]
      },
      {
-       id: 2, name: "Daant Manjan", price: 90.00, img: "/Daant_Manjan.jpg", // Example price update
+       id: 2, name: "Daant Manjan", price: 90.00, quantity: '50gm', img: "/Daant_Manjan.jpg", // Example price update
        description: "A herbal tooth powder enriched with cloves and neem for strong, healthy teeth and fresh breath. Naturally whitens and protects gums.",
        howToUse: "Take a small amount on a soft toothbrush or finger. Gently massage teeth and gums for 2 minutes. Rinse thoroughly with water. Use twice daily.",
        benefits: ["Save water, In toothpaste people use more water than this manjan require few water",
@@ -45,7 +45,7 @@ const products = [
        reviews: [{ user: "Amit G.", text: "Love the natural taste and freshness!", rating: 4 }, {user: "Sunita", text: "My gums feel healthier.", rating: 5}]
      },
      {
-       id: 3, name: "Face Pack", price: '180', img: "/Face_Pack.jpg", // Example price update
+       id: 3, name: "Face Pack", price: '160', quantity: '70gm', img: "/Face_Pack.jpg", // Example price update
        description: "Rejuvenating herbal face pack with Multani Mitti and Sandalwood for clear, radiant skin. Removes impurities and excess oil.",
        howToUse: "Mix 1-2 teaspoons with rose water or milk to form a paste. Apply evenly on cleansed face and neck, avoiding eye area. Leave on for 15-20 minutes until dry. Rinse off with cool water.",
        benefits: ["Deep cleanses pores.", "Controls excess oil and acne.", "Improves skin tone and texture.", "Provides a cooling and soothing effect."],
@@ -53,7 +53,7 @@ const products = [
        reviews: [{ user: "Sneha P.", text: "Amazing glow after using this!", rating: 5 }]
      },
      {
-       id: 4, name: "Jodo Ka Tail", price: '180', img: "/Jodo_Ka_Tail.jpg", // Example price update
+       id: 4, name: "Jodo Ka Tail", price: '180', quantity: '60ml',  img: "/Jodo_Ka_Tail.jpg", // Example price update
        description: "Warming Ayurvedic massage oil formulated to relieve joint and muscle discomfort. Infused with potent herbs for deep penetration.",
        howToUse: "Warm a small amount of oil slightly. Gently massage onto the affected joints or muscles for 10-15 minutes. Apply 2-3 times a day for best results. Fomentation after massage can enhance benefits.",
        benefits: ["Soothes joint pain and stiffness.", "Reduces muscle soreness and inflammation.", "Improves flexibility and mobility.", "Strengthens bones and muscles."],
@@ -61,7 +61,7 @@ const products = [
        reviews: [{ user: "Vikram R.", text: "Provides good relief from my knee pain.", rating: 4 }]
      },
       {
-       id: 5, name: "Kesh Ratn Hair Oil", price: '180', img: "/Kesh_Ratn.jpg", // Example price update
+       id: 5, name: "Kesh Ratn Hair Oil", price: '360', quantity: '100ml', img: "/Kesh_Ratn.jpg", // Example price update
        description: "Nourishing herbal hair oil enriched with Bhringraj and Amla to promote healthy hair growth, reduce hair fall, and prevent premature graying.",
        howToUse: "Gently massage the oil into the scalp using fingertips for 10-15 minutes. Leave it on for at least an hour or preferably overnight. Wash off with a mild herbal shampoo. Use 2-3 times a week.",
        benefits: ["Reduces hair fall and dandruff.", "Promotes stronger and thicker hair growth.", "Nourishes the scalp and hair roots.", "Adds natural shine and softness."],
@@ -69,7 +69,7 @@ const products = [
        reviews: [{ user: "Neha V.", text: "My hair feels much thicker and healthier!", rating: 5 }, {user: "Rajesh", text: "Reduced my hair fall significantly.", rating: 4}]
      },
      {
-       id: 6, name: "Power Churan", price: '180', img: "/Power_Churan.jpg", // Example price update
+       id: 6, name: "Power Churan", price: '340', quantity: '70gm', img: "/Power_Churan.jpg", // Example price update
        description: "An invigorating Ayurvedic blend to boost energy levels, improve stamina, and combat fatigue naturally. Supports overall vitality.",
        howToUse: "Take 1 teaspoon (approx. 3-5g) with a glass of warm milk or water, preferably in the morning.",
        benefits: ["Enhances energy and stamina.", "Reduces physical and mental fatigue.", "Improves concentration and alertness.", "Supports immune function."],
@@ -77,7 +77,7 @@ const products = [
        reviews: [{ user: "Kunal M.", text: "Definitely feel more energetic throughout the day!", rating: 4 }]
      },
      {
-       id: 7, name: "Rambaan Tail", price: 180.00, img: "/Rambaan_Tail.jpg", // Example price update
+       id: 7, name: "Rambaan Tail", price: 180.00, quantity: '60ml', img: "/Rambaan_Tail.jpg", // Example price update
        description: "A multi-purpose Ayurvedic healing oil known for its antiseptic and soothing properties. Effective for minor cuts, burns, and skin irritations.",
        howToUse: "Apply a small amount directly to the affected skin area 2-3 times daily. Can be used for gentle massage.",
        benefits: ["Promotes faster healing of minor wounds.", "Soothes burns and skin inflammation.", "Acts as a natural antiseptic.", "Relieves itching and irritation."],
