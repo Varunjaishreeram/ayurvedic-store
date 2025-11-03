@@ -105,7 +105,32 @@ const products = [
             { user: "Anita S.", text: "Really effective for keeping my sugar levels in check.", rating: 5 },
             { user: "Rahul M.", text: "Good natural support, feel more energetic.", rating: 4 }
         ]
-    }
+    },
+
+
+
+    {
+    id: 9,
+    name: "Sandhivatsal Churna",
+    price: 210.00,
+    quantity: "70gm",
+    img: "/Sandhivatsal_Churna.jpeg",
+    description: "An Ayurvedic formulation specially designed to support joint and bone health. Sandhivatsal Churna helps relieve stiffness, swelling, and discomfort in joints caused by Vata imbalance, arthritis, or age-related wear and tear.",
+    howToUse: "Take 1 teaspoon (approx. 5g) with warm water or milk twice a day after meals, or as directed by your physician. Consistent use for a few weeks provides best results.",
+    benefits: [
+        "Relieves joint pain and inflammation.",
+        "Improves flexibility and mobility.",
+        "Supports healthy bones and cartilage.",
+        "Helps in conditions like arthritis and rheumatism."
+    ],
+    ingredients: "Ashwagandha, Guggul, Shunthi (Dry Ginger), Rasna, Eranda Mool, Shallaki, Nirgundi, etc...",
+    rating: 4.6,
+    reviews: [
+        { user: "Pooja T.", text: "After regular use, my knee pain has reduced a lot!", rating: 5 },
+        { user: "Deepak K.", text: "Good relief for my joint stiffness. Feels more mobile now.", rating: 4 }
+    ]
+}
+
 
 ];
 
